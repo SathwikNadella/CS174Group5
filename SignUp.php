@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <style>
-
+* {
+			margin: 0;
+			padding: 0;
+		}
+    form *{
+      padding: 5px 5px;
+    }
 nav {
     width: 100%;
     height: 100px;
@@ -31,7 +37,7 @@ ul li a:hover {
     p#error { color: red; }
 </style>
 <head>
-    <Title> Sign Up Page </Title>
+    <Title> UrbanFabric - Sign Up </Title>
 </head>
 <body>
     <nav>

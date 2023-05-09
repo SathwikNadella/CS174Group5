@@ -3,6 +3,18 @@
 <head>
 	<title>Orders</title>
 	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		p{
+			margin: 15px;
+			padding: 15px;
+		}
+		h1{
+			display: inline-block;
+			align:left;
+		}
 		nav {
 			width: 100%;
 			height: 100px;
@@ -62,18 +74,18 @@
     </nav>
 	<h1>Orders</h1>
 
-	<p>Your order has been placed successfully.</p>
+	<p>Your order has been placed successfully. Here's a list of your previous orders.</p>
 
 	<?php
 		$orders = json_decode($_COOKIE['orders'], true);
 
 		if (!empty($orders)) {
 			echo '<table>';
-			echo '<tr><th>ID</th><th>Item Description</th></tr>';
+			echo '<tr><th>Order Description</th></tr>';
 
 			foreach ($orders as $order) {
 				echo '<tr>';
-				echo '<td>' . $order['id'] . '</td>';
+				// echo '<td>' . $order['id'] . '</td>';
 				echo '<td>' . $order['Orderdesc'] . '</td>';
 				echo '</tr>';
 			}

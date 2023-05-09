@@ -3,8 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Shopping Cart - Cart Summary</title>
-    <!-- <link rel="stylesheet" type="text/css" href="homepage.css"> -->
+    
 	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
 		nav {
 			width: 100%;
 			height: 100px;
@@ -57,13 +61,14 @@
 		}
 		button {
 			display: block;
-			margin: 20px auto;
+			margin: 10px auto;
 			padding: 10px 20px;
 			background-color: #4CAF50;
 			color: white;
 			border: none;
-			border-radius: 4px;
+			border-radius: 5px;
 			cursor: pointer;
+			font-size: 16px;
 		}
 		button:hover {
 			background-color: #3e8e41;
@@ -87,7 +92,7 @@
         </ul>
       </nav>
 	<div class="container">
-		<h1>Shopping Cart - Cart Summary</h1>
+		<h1>Shopping Cart - Summary</h1>
 		<?php
             function findItemById($cartItems, $id) {
                 foreach ($cartItems as $item) {
