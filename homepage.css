@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fefefe;
+}
+
+/* h1 {
+    margin-left: 550px;
+} */
+
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: #6afdbd;
+}
+ul {
+
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    float: left;
+    line-height: 100px;
+}
+
+ul li a{
+    text-decoration: none;
+    font-size: 14px;
+    font-family: arial;
+    padding: 0 20px;
+    color:black
+}
+
+ul li a:hover {
+    color: red;
+}
+
+p {
+    margin-bottom: 100px;
+}
+
+.center-box {
+    margin-left: 550px;
+    display: flex;
+    justify-content: center;
+    float: center;
+    align-items: center;
+    height: 150px; /* set the height of the box */
+    width: 300px;
+    border: 4px solid black;
+    background-color: #6afdbd; /* add a border for visualization */
+}
+
+.signin, .signup {
+    padding: 10px 20px; /* set the padding of the buttons */
+    margin: 0 10px; /* set the margin between the buttons */
+  }
+/* .cover {
+background-image: url("nimble-made.jpg");
+background-size: cover;
+height: 600px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+padding: 20px;
+} */
+.bg {
+    background-image: url("nimble-made.jpg");
+
+  /* Full height */
+  height: 600px; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg#h1 .bg#p {
+    float:right;
+}
