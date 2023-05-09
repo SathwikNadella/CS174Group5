@@ -2,11 +2,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Clothing Store</title>
-    <!-- <link rel="stylesheet" type="text/css" href="homepage.css"> -->
+	<title>UrbanFabric</title>
+    <link rel="stylesheet" type="text/css" href="cartbutton.css">
 	<style>
         
-
+		* {
+			margin: 0;
+			padding: 0;
+		}
 nav {
     width: 100%;
     height: 100px;
@@ -40,7 +43,7 @@ ul li a:hover {
 		}
 		.item {
 			display: inline-block;
-			margin: 20px;
+			margin: 15px;
 			padding: 20px;
 			border: 1px solid #ccc;
 			text-align: center;
@@ -48,6 +51,8 @@ ul li a:hover {
 		}
 		.item img {
 			max-width: 100%;
+			height: 225px;
+			
 		}
 		.item button {
 			display: block;
@@ -105,36 +110,54 @@ ul li a:hover {
           <li style="float: right;"><a href="cart.php">Shopping Cart</a></li>
         </ul>
     </nav>
-	<h1>Clothing Store</h1>
+	<h1>Products</h1>
 	<div class="item">
-		<img src="item1.jpg" alt="Item 1">
-		<h2>Item 1</h2>
+		<img src="item1.png" alt="Item 1">
+		<h2>Golf Polo Shirts for Men</h2>
 		<p>$20</p>
 		<button class="add-to-cart" data-id="1">Add to Cart</button>
 	</div>
 	<div class="item">
-		<img src="item2.jpg" alt="Item 2">
-		<h2>Item 2</h2>
+		<img src="item2.png" alt="Item 2">
+		<h2>Leather Casual Slip on Loafers</h2>
 		<p>$30</p>
 		<button class="add-to-cart" data-id="2">Add to Cart</button>
 	</div>
 	<div class="item">
-		<img src="item3.jpg" alt="Item 3">
-		<h2>Item 3</h2>
+		<img src="item3.png" alt="Item 3">
+		<h2>Cotton Long sleeve shirt</h2>
 		<p>$25</p>
 		<button class="add-to-cart" data-id="3">Add to Cart</button>
 	</div>
 	<div class="item">
-		<img src="item4.jpg" alt="Item 4">
-		<h2>Item 4</h2>
-		<p>$15</p>
+		<img src="item4.png" alt="Item 4">
+		<h2>Womens slim fit shirts</h2>
+		<p>$25</p>
 		<button class="add-to-cart" data-id="4">Add to Cart</button>
 	</div>
 	<div class="item">
-		<img src="item5.jpg" alt="Item 5">
-		<h2>Item 5</h2>
+		<img src="item5.png" alt="Item 5">
+		<h2>Womens Dolman top</h2>
 		<p>$10</p>
 		<button class="add-to-cart" data-id="5">Add to Cart</button>
+	</div>
+	<div class="item">
+		<img src="item6.png" alt="Item 6">
+		<h2>Sneakers for Women</h2>
+		<p>$40</p>
+		<button class="add-to-cart" data-id="6">Add to Cart</button>
+	</div>
+	<div class="item">
+		<img src="item7.png" alt="Item 7">
+		<h2>Golf hat</h2>
+		<p>$10</p>
+		<button class="add-to-cart" data-id="7">Add to Cart</button>
+	</div>
+	<div class="item">
+		<img src="item8.png" alt="Item 8">
+		<h2>Gamerverse Hoodie for Men</h2>
+		<p>$10</p>
+		<button class="add-to-cart" data-id="8">Add to Cart</button>
 	</div>
 	<!-- <div class="cart">
 		<h2>Shopping Cart</h2>
