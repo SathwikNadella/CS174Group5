@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
 * {
 			margin: 0;
 			padding: 0;
 		}
-    form *{
-      padding: 5px 5px;
-    }
 nav {
     width: 100%;
     height: 100px;
@@ -32,8 +30,19 @@ ul li a{
 ul li a:hover {
     color: red;
 }
-    label { margin-left:16px; }
-    label.left { float:left; margin-left: 0; margin-right:16px; }
+label {
+  display: block;
+  text-align: center;
+}
+        form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form * {
+  padding: 5px 5px;
+}
     p#error { color: red; }
 </style>
 <head>
@@ -47,14 +56,17 @@ ul li a:hover {
           
         </ul>
     </nav>
-    <h2> Sign Up </h2>
+    <div class="bg-info text-black p-1 text-center">
+        <h1>Sign Up</h1>
+        <p>Sign up and create your very own UrbanFabric account!</p> 
+    </div>
     <form action = "SignUp.php" onsubmit="return validateForm();" method="post">
     
-    <p><input type="text" name="fName" id="fName"/><label for="fName" class="left">First Name:</label></p>
-    <p><input type="text" name="lName" id="lName"/><label for="lName" class="left">Last Name:</label></p>
-    <p><input type="text" name="email" id="email"/><label for="email" class="left">Email:</label></p>
-    <p><input type="text" name="pWord" id="pWord"/><label for="pWord" class="left">Password:</label></p>    
-    <input type="submit" name="Submit" value="Submit" onclick='window.location.href = "homepage_signedin.html";'>
+    <p><label for="fName" >First Name</label><input type="text" name="fName" id="fName"/></p>
+    <p><label for="lName" >Last Name</label><input type="text" name="lName" id="lName"/></p>
+    <p><label for="email" >Email</label><input type="text" name="email" id="email"/></p>
+    <p><label for="pWord" >Password</label><input type="password" name="pWord" id="pWord"/></p>    
+    <input type="submit" name="Submit" class="btn btn-success" value="Submit" onclick='window.location.href = "homepage_signedin.html";'>
     
     </form>
 <hr />
