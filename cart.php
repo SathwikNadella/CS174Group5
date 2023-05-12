@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Shopping Cart - Cart Summary</title>
-    
+    <link rel="stylesheet" type="text/css" href="homepage.css" />
+	<link rel="stylesheet" type="text/css" href="cartToast.css">
 	<style>
 		* {
 			margin: 0;
@@ -12,7 +13,7 @@
 		nav {
 			width: 100%;
 			height: 100px;
-			background-color: #6afdbd;
+			background-color: rgb(208, 183, 192);
 		}
 
 		ul li{
@@ -74,13 +75,6 @@
 			background-color: #3e8e41;
 		}
 	</style>
-    <!-- <script>
-        // Load cart items from local storage
-	    var cartItems = JSON.parse(localStorage.getItem('cartItems'));
-
-        // Save cart items to cookie for PHP to access
-        document.cookie = 'cartItems=' + JSON.stringify(cartItems);
-    </script> -->
 </head>
 <body>
     <nav>
@@ -102,8 +96,6 @@
                 }
                 return null;
               }
-			// Get the cart items from local storage
-			//$cartItems = json_decode($_COOKIE['cartItems'], true);
             $cartItems = isset($_COOKIE['cartItems']) ? json_decode(stripslashes($_COOKIE['cartItems']), true) : array();
 			if (!$cartItems) {
 				echo "<p>Your cart is empty.</p>";
@@ -139,6 +131,7 @@
 				echo "<tr><td colspan='3' class='total'>Total:</td><td>&dollar;" . $total . "</td></tr>";
 				echo "</table>";
 				echo "<button onclick='document.cookie = \"itemsDesc = $itemsDesc\"; placeOrder();'>Place Order</button>";
+				echo "<div id=\"snackbar\">Order successful!</div>";
 			}
 		?>
 	</div>
@@ -160,15 +153,11 @@
                 var existingOrders = [newItem];
             }
             
-            //var existingOrders ;//= JSON.parse();
-            
-            // if(existingOrders){
-            //     existingOrders.push(newItem);
-            // }
-            // else{
-            //     existingOrders = [newItem];
-            // }
             document.cookie = "orders="+JSON.stringify(existingOrders);
+			document.cookie = "cartItems=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+			var x = document.getElementById("snackbar");
+			x.className = "show";
+			setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 			window.location.href = "orders.php";
 		}
 	</script>

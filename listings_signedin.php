@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>UrbanFabric</title>
     <link rel="stylesheet" type="text/css" href="cartbutton.css">
+	<link rel="stylesheet" type="text/css" href="cartToast.css">
 	<style>
         
 		* {
@@ -13,7 +14,7 @@
 nav {
     width: 100%;
     height: 100px;
-    background-color: #6afdbd;
+    background-color: rgb(208, 183, 192);;
 }
 
 ul li{
@@ -159,12 +160,7 @@ ul li a:hover {
 		<p>$10</p>
 		<button class="add-to-cart" data-id="8">Add to Cart</button>
 	</div>
-	<!-- <div class="cart">
-		<h2>Shopping Cart</h2>
-    <ul id="cart-items">
-    </ul>
-    <a href="cart.php">View Cart</a>
-    </div> -->
+	<div id="snackbar">Item added to the cart!</div>
     <script>
     var addToCartButtons = document.querySelectorAll(".add-to-cart");
     var cartItems = localStorage.getItem("cartItems");
@@ -192,6 +188,7 @@ ul li a:hover {
             //     //setcookie("cartItems",$_COOKIE['cartItems'] = $cartItems, time()+60*60*24*5);
             // ?>
 			updateCart();
+			cartToast();
 		});
 	});
 
@@ -203,6 +200,11 @@ ul li a:hover {
 			listItem.textContent = item.name + " - " + item.price;
 			cartList.appendChild(listItem);
 		});
+	}
+	function cartToast() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 	}
 </script>
 </body>

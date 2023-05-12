@@ -18,7 +18,7 @@
 		nav {
 			width: 100%;
 			height: 100px;
-			background-color: #6afdbd;
+			background-color: rgb(208, 183, 192);
 		}
 
 		ul li{
@@ -91,6 +91,7 @@
 			}
 
 			echo '</table>';
+			setcookie("cartItems", "", time() - 3600);
 		} else {
 			echo '<p class="empty">You have no previous orders.</p>';
 		}
