@@ -14,7 +14,7 @@
         nav {
             width: 100%;
             height: 100px;
-            background-color: #6afdbd;
+            background-color: rgb(208, 183, 192);
         }
         ul li {
             list-style: none;
@@ -68,32 +68,37 @@ form * {
         <p><label for="pWord" >Password</label><input type="password" name="pWord" id="pWord"></p>    
         <input type="submit" name="Submit" class="btn btn-success" value="Submit" onclick='window.location.href = "homepage_signedin.html";'>
     </form>
-    <hr />
     <?php 
         if(isset($_POST['Submit'])) {
             $email = $_POST['email'];
             $pWord = $_POST['pWord'];
             $err = false;
-            if ($email=='') {
-                echo '<p style="color: red;">Email is empty</p>';
-                $err = true;
-            }
-            elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                echo '<p style="color: red;">Invalid Email Format</p>';
-                $err = true;
-            }
-            if ($pWord=='') {
-                echo '<p style="color: red;">Password is empty</p>';
-                $err = true;
-            }
-            elseif (strlen($pWord) < 8) {
-                echo '<p style="color: red;">Password must be at least 8 characters long</p>';
-                $err = true;
-            }
-            if ($err == false){
-              header("Location: homepage_signedin.html");
-              exit;
-            }
+            if ($email=='') 
+      {
+        echo '<script>alert("Email is empty");</script>';
+        $err = true;
+      }
+      elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+      {
+        echo '<script>alert("Invalid Email Format");</script>';
+        $err = true;
+      }
+
+      if ($pWord=='')
+      {
+        echo '<script>alert("Password is empty");</script>';
+        $err = true;
+      }
+      elseif (strlen($pWord) < 8) 
+      {
+        echo '<script>alert("Password must be at least 8 characters long");</script>';
+        $err = true;
+      }
+
+      if ($err == false){
+      header("Location: homepage_signedin.html");
+      exit;
+      }
         }
     ?> 
 </body>

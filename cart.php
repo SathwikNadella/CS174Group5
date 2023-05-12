@@ -75,13 +75,6 @@
 			background-color: #3e8e41;
 		}
 	</style>
-    <!-- <script>
-        // Load cart items from local storage
-	    var cartItems = JSON.parse(localStorage.getItem('cartItems'));
-
-        // Save cart items to cookie for PHP to access
-        document.cookie = 'cartItems=' + JSON.stringify(cartItems);
-    </script> -->
 </head>
 <body>
     <nav>
@@ -103,8 +96,6 @@
                 }
                 return null;
               }
-			// Get the cart items from local storage
-			//$cartItems = json_decode($_COOKIE['cartItems'], true);
             $cartItems = isset($_COOKIE['cartItems']) ? json_decode(stripslashes($_COOKIE['cartItems']), true) : array();
 			if (!$cartItems) {
 				echo "<p>Your cart is empty.</p>";
@@ -162,15 +153,8 @@
                 var existingOrders = [newItem];
             }
             
-            //var existingOrders ;//= JSON.parse();
-            
-            // if(existingOrders){
-            //     existingOrders.push(newItem);
-            // }
-            // else{
-            //     existingOrders = [newItem];
-            // }
             document.cookie = "orders="+JSON.stringify(existingOrders);
+			document.cookie = "cartItems=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
 			var x = document.getElementById("snackbar");
 			x.className = "show";
 			setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);

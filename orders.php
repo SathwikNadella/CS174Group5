@@ -91,6 +91,7 @@
 			}
 
 			echo '</table>';
+			setcookie("cartItems", "", time() - 3600);
 		} else {
 			echo '<p class="empty">You have no previous orders.</p>';
 		}
