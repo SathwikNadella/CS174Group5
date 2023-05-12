@@ -13,7 +13,7 @@
 nav {
     width: 100%;
     height: 100px;
-    background-color: #6afdbd;
+    background-color: rgb(208, 183, 192);
 }
 
 ul li{

@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Shopping Cart - Cart Summary</title>
-    
+    <link rel="stylesheet" type="text/css" href="homepage.css" />
+	<link rel="stylesheet" type="text/css" href="cartToast.css">
 	<style>
 		* {
 			margin: 0;
@@ -12,7 +13,7 @@
 		nav {
 			width: 100%;
 			height: 100px;
-			background-color: #6afdbd;
+			background-color: rgb(208, 183, 192);
 		}
 
 		ul li{
@@ -139,6 +140,7 @@
 				echo "<tr><td colspan='3' class='total'>Total:</td><td>&dollar;" . $total . "</td></tr>";
 				echo "</table>";
 				echo "<button onclick='document.cookie = \"itemsDesc = $itemsDesc\"; placeOrder();'>Place Order</button>";
+				echo "<div id=\"snackbar\">Order successful!</div>";
 			}
 		?>
 	</div>
@@ -169,6 +171,9 @@
             //     existingOrders = [newItem];
             // }
             document.cookie = "orders="+JSON.stringify(existingOrders);
+			var x = document.getElementById("snackbar");
+			x.className = "show";
+			setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 			window.location.href = "orders.php";
 		}
 	</script>
