@@ -73,20 +73,27 @@ form * {
         if(isset($_POST['Submit'])) {
             $email = $_POST['email'];
             $pWord = $_POST['pWord'];
+            $err = false;
             if ($email=='') {
                 echo '<p style="color: red;">Email is empty</p>';
+                $err = true;
             }
             elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 echo '<p style="color: red;">Invalid Email Format</p>';
+                $err = true;
             }
             if ($pWord=='') {
                 echo '<p style="color: red;">Password is empty</p>';
+                $err = true;
             }
             elseif (strlen($pWord) < 8) {
                 echo '<p style="color: red;">Password must be at least 8 characters long</p>';
+                $err = true;
             }
-            header("Location: homepage_signedin.html");
-            exit;
+            if ($err == false){
+              header("Location: homepage_signedin.html");
+              exit;
+            }
         }
     ?> 
 </body>

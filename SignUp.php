@@ -66,7 +66,7 @@ form * {
     <p><label for="lName" >Last Name</label><input type="text" name="lName" id="lName"/></p>
     <p><label for="email" >Email</label><input type="text" name="email" id="email"/></p>
     <p><label for="pWord" >Password</label><input type="password" name="pWord" id="pWord"/></p>    
-    <input type="submit" name="Submit" class="btn btn-success" value="Submit" onclick='window.location.href = "homepage_signedin.html";'>
+    <input type="submit" name="Submit" class="btn btn-success" value="Submit">
     
     </form>
 <hr />
@@ -78,34 +78,45 @@ if(isset($_POST['Submit']))
     $lName = $_POST['lName'];
     $email = $_POST['email'];
     $pWord = $_POST['pWord'];
-    
+    $err = false;
       if ($fName=='') 
       {
         echo '<p style="color: red;">First Name is empty</p>';
+        $err = true;
       }
     
       if ($lName=='')
        {
         echo '<p style="color: red;">Last Name is empty</p>';
+        $err = true;
       }
 
       if ($email=='') 
       {
         echo '<p style="color: red;">Email is empty</p>';
+        $err = true;
       }
       elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
       {
         echo '<p style="color: red;">Invalid Email Format</p>';
+        $err = true;
       }
 
       if ($pWord=='')
       {
         echo '<p style="color: red;">Password is empty</p>';
+        $err = true;
       }
       elseif (strlen($pWord) < 8) 
       {
         echo '<p style="color: red;">Password must be at least 8 characters long</p>';
+        $err = true;
       }
+      if ($err == false){
+        header("Location: homepage_signedin.html");
+        exit;
+      }
+      
 }
 ?> 
 </body>
